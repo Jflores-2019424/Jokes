@@ -1,3 +1,6 @@
+const joke = document.getElementById('joke')
+const btnJoke = document.getElementById('btnJoke')
+
 const jokes = [
      "I hate perforated lines, theyre tearable",
      "What do you call your friend who stands in a hole? Phil.",
@@ -7,5 +10,12 @@ const jokes = [
      "What did the piece of bread say to the knife? Butter me up"
 ]
 
+btnJoke.addEventListener('click', generateJoke)
+
+function generateJoke() {
 const randomJoke = Math.floor(Math.random() * jokes.length);
 console.log(randomJoke, jokes[randomJoke])
+
+const data = jokes[randomJoke]
+joke.innerHTML = data
+}
